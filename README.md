@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Antoscha Haensch — Portfolio
 
-## Getting Started
+Ein zweisprachiges (DE / EN) Portfolio für Antoscha Haensch, gebaut mit Next.js und deployed auf Cloudflare Pages.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, Static Export → `next.config.ts` hat `output: "export"`)
+- **Tailwind CSS v4** (Theme-Tokens in `app/globals.css`)
+- **Fonts:** Schoolbell (handgeschrieben), Quicksand (Sans), DM Mono (Monospace) — alle via `next/font/google`
+
+## Lokal entwickeln
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dann http://localhost:3000 im Browser öffnen.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Bauen (Static Export)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Erzeugt einen `out/`-Ordner mit allen statischen HTML-Dateien.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment auf Cloudflare Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Variante A — über das Cloudflare-Dashboard (empfohlen, einfachster Weg)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Code auf GitHub pushen (Repo `antoscha`).
+2. Cloudflare-Dashboard → **Pages → Create application → Connect to Git**.
+3. Repo auswählen, Build-Einstellungen:
+   - **Framework preset:** Next.js (Static HTML Export)
+   - **Build command:** `npm run build`
+   - **Build output directory:** `out`
+   - **Root directory:** (leer)
+   - **Environment variables:** keine nötig
+4. Deploy klicken. Bei Erfolg ist die Site unter `antoscha.pages.dev` erreichbar (der genaue Subdomain-Name ergibt sich aus dem Projekt-Namen in Cloudflare).
 
-## Deploy on Vercel
+### Variante B — über Wrangler CLI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install -g wrangler
+wrangler pages deploy out --project-name=antoscha
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Inhalte austauschen
+
+### Projekte
+
+Alle Projektdaten (Titel, Beschreibungen, Medien, Position auf der Seite) liegen in **`data/projects.ts`**. Pro Projekt:
+
+- `title.de` / `title.en` — Titel in beiden Sprachen
+- `description.de` / `description.en` — Beschreibungstext
+- `media` — eines von:
+  - `{ type: "youtube", videoId: "abc123" }` — YouTube-Video einbetten
+  - `{ type: "images", sources: [...] }` — Foto-Galerie
+  - `{ type: "pdf", src: "/path.pdf", preview: "/path.svg" }` — PDF mit Vorschaubild
+  - `{ type: "comic", sources: [...] }` — vertikaler Comic-Stack
+- `thumbnail` — Bild auf der Übersichtsseite
+- `position` — `top`, `left`, `rotate`, `width` für Desktop-Layout
+
+### Bilder & PDFs
+
+Liegen in `public/`:
+
+- `public/cv-placeholder.pdf` → ersetzen durch echten **Lebenslauf** (oder Datei umbenennen und Pfad in `components/Hero.tsx` anpassen).
+- `public/thesis-placeholder.pdf` → ersetzen durch echte **Bachelorarbeit**.
+- `public/placeholders/*.svg` → ersetzen durch echte Projektbilder. Pfade in `data/projects.ts` aktualisieren.
+- `public/placeholders/*.pdf` → echte Artikel/Auszüge (Babushkas Pogreb, Sensing Data Centres).
+
+### YouTube-Videos
+
+In `data/projects.ts` bei den `audiovisual`-Projekten: `videoId` durch die echte YouTube-Video-ID ersetzen (z. B. aus URL `https://youtube.com/watch?v=XYZ` → `videoId: "XYZ"`).
+
+Bis dahin verlinken alle Videos auf einen Platzhalter.
+
+### Texte & Übersetzungen
+
+UI-Texte (Buttons, Filter, Sprachschalter) in **`lib/i18n.ts`**.
+
+## Struktur
+
+```
+app/
+  layout.tsx          # Root-Layout (Fonts, Metadata)
+  page.tsx            # / → Deutsch
+  en/page.tsx         # /en → Englisch
+  globals.css         # Tailwind + Theme-Tokens
+components/
+  PortfolioPage.tsx   # Haupt-Komponente (Hero + Filter + Cloud + Modal)
+  Hero.tsx
+  CategoryFilter.tsx
+  ProjectsCloud.tsx
+  ProjectCard.tsx
+  ProjectModal.tsx
+  LanguageSwitcher.tsx
+  Scribble.tsx        # SVG-Akzente
+data/
+  projects.ts         # Inhalt
+lib/
+  i18n.ts             # Übersetzungen
+public/
+  placeholders/       # Platzhalter-Bilder & -PDFs
+  cv-placeholder.pdf
+  thesis-placeholder.pdf
+```
+
+## Hinweise
+
+- Videos werden grundsätzlich via YouTube eingebettet (kein Self-Hosting). Für nicht-öffentliche Filme empfiehlt sich der **„Nicht gelistet"**-Status auf YouTube.
+- Cloudflare Pages Free Tier hat keine relevanten Limits für statische Seiten dieser Größe.
