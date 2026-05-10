@@ -4,12 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
 import type { Locale } from "@/lib/i18n";
+import { ui } from "@/lib/i18n";
 
 type Props = { project: Project; locale: Locale };
 
 export function ProjectMedia({ project, locale }: Props) {
   const { media } = project;
   const morphName = `card-${project.id}`;
+  const t = ui[locale];
 
   if (media.type === "youtube") {
     return (
@@ -35,6 +37,7 @@ export function ProjectMedia({ project, locale }: Props) {
       <Slider
         morphName={morphName}
         sources={media.sources.map((s) => ({ src: s.src, alt: s.alt[locale] }))}
+        labels={{ prev: t.prev, next: t.next }}
         download={
           media.pdfDownload
             ? { src: media.pdfDownload.src, label: media.pdfDownload.label[locale] }
@@ -52,6 +55,7 @@ export function ProjectMedia({ project, locale }: Props) {
           src,
           alt: `Comic ${i + 1}`,
         }))}
+        labels={{ prev: t.prev, next: t.next }}
       />
     );
   }
@@ -79,7 +83,7 @@ export function ProjectMedia({ project, locale }: Props) {
         rel="noopener noreferrer"
         className="font-mono text-[13px] font-bold uppercase tracking-wider text-ink transition-[letter-spacing] duration-200 ease-out hover:tracking-widest"
       >
-        ({locale === "de" ? "PDF ÖFFNEN" : "OPEN PDF"})
+        ({t.openPdf.toUpperCase()})
       </a>
     </div>
   );
@@ -88,10 +92,12 @@ export function ProjectMedia({ project, locale }: Props) {
 function Slider({
   sources,
   morphName,
+  labels,
   download,
 }: {
   sources: { src: string; alt: string }[];
   morphName: string;
+  labels: { prev: string; next: string };
   download?: { src: string; label: string };
 }) {
   const [i, setI] = useState(0);
@@ -123,7 +129,7 @@ function Slider({
             onClick={prev}
             className="transition-[letter-spacing] duration-200 ease-out hover:tracking-widest"
           >
-            (PREV)
+            ({labels.prev.toUpperCase()})
           </button>
           <span className="opacity-50">
             {i + 1} / {total}
@@ -132,7 +138,7 @@ function Slider({
             onClick={next}
             className="transition-[letter-spacing] duration-200 ease-out hover:tracking-widest"
           >
-            (NEXT)
+            ({labels.next.toUpperCase()})
           </button>
         </div>
       )}

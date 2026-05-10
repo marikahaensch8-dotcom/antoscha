@@ -23,6 +23,9 @@ export const ui = {
     yearLabel: "Jahr",
     categoryLabel: "Kategorie",
     moreInfo: "Mehr lesen",
+    prev: "Zurück",
+    next: "Weiter",
+    openPdf: "PDF öffnen",
     placeholderNote:
       "Inhalt folgt — Platzhalter wird ausgetauscht, sobald die Originaldateien da sind.",
   },
@@ -45,6 +48,9 @@ export const ui = {
     yearLabel: "Year",
     categoryLabel: "Category",
     moreInfo: "Read more",
+    prev: "Prev",
+    next: "Next",
+    openPdf: "Open PDF",
     placeholderNote:
       "Content coming — placeholder will be swapped once originals are in.",
   },

@@ -47,7 +47,7 @@ export const projects: Project[] = [
     caption: "(01)",
     year: "2025",
     title: {
-      de: "Art Space & Collective Exhibition — Rap100",
+      de: "Kunstraum & Kollektive Ausstellung — Rap100",
       en: "Art Space & Collective Exhibition — Rap100",
     },
     shortTitle: { de: "Rap100", en: "Rap100" },
@@ -115,8 +115,8 @@ export const projects: Project[] = [
     category: "audiovisual",
     caption: "(04)",
     year: "2023",
-    title: { de: "A Childhood Tea Ceremony", en: "A Childhood Tea Ceremony" },
-    shortTitle: { de: "Tea Ceremony", en: "Tea Ceremony" },
+    title: { de: "Eine Teezeremonie aus der Kindheit", en: "A Childhood Tea Ceremony" },
+    shortTitle: { de: "Teezeremonie", en: "Tea Ceremony" },
     subtitle: { de: "Kurzfilm für Visual Anthropology", en: "Short film for Visual Anthropology" },
     description: {
       de: "Teekannen, Samoware, Erinnerungen, die in Objekten weiterleben, mündliche Geschichten, Klänge. Meine Großmutter und ich sitzen zusammen und lassen Dinge auftauchen — eine Zusammenarbeit und eine Form des Zuhörens.\n\nKurzfilm für Visual Anthropology.",
@@ -132,8 +132,8 @@ export const projects: Project[] = [
     category: "audiovisual",
     caption: "(05)",
     year: "2024",
-    title: { de: "I Am an Anthropologist", en: "I Am an Anthropologist" },
-    shortTitle: { de: "Anthropologist", en: "Anthropologist" },
+    title: { de: "Ich bin Anthropologin", en: "I Am an Anthropologist" },
+    shortTitle: { de: "Anthropologin", en: "Anthropologist" },
     subtitle: { de: "Videoessay", en: "Video essay" },
     description: {
       de: "Was bedeutet es, Anthropolog:in zu sein? Wie wollen wir diese Disziplin in unser Leben integrieren? Wie schätzen wir ihren Einfluss auf uns ein? Finn und ich experimentieren, reflektieren und führen offene Gespräche in diesem Videoessay — er ist zum einen ein Abschluss unseres Anthropologiestudiums, zum anderen der Anfang unserer eigenen Praxis.\n\nVideoessay von Finn Bergmann und Antoscha Haensch.",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     caption: "(07)",
     year: "2024",
     title: { de: "Sensing Data Centres", en: "Sensing Data Centres" },
-    shortTitle: { de: "Data Centres", en: "Data Centres" },
+    shortTitle: { de: "Rechenzentren", en: "Data Centres" },
     subtitle: { de: "Auszug aus der Bachelorarbeit", en: "Bachelor thesis excerpt" },
     description: {
       de: "Rechenzentren gehören zu den am schnellsten wachsenden Industrien weltweit — vorangetrieben von einer Handvoll US-amerikanischer Tech-Konzerne und zunehmend in den kälteren Regionen Nordeuropas konzentriert. Sie sind ressourcenintensiv, schaffen Abhängigkeiten und tauchen erstaunlich selten in der öffentlichen Debatte auf.\n\nMeine Bachelorarbeit nähert sich diesem Problem aus einer anthropologischen Perspektive — genauer: aus der der Sinne. Ich frage, wie Rechenzentren gespürt, diskutiert und kollektiv verstanden werden können. Anhand von Bürgerinitiativen und Praktiken kollektiver Wissensbildung argumentiere ich, dass ein Einstieg über sinnliche Erfahrung — Geräusch, Hitze, Unbehagen, Geschwindigkeit — einen Zugang zur öffentlichen Auseinandersetzung eröffnet, den die abstrakte technische Debatte verschließt. Informierte Entscheidungen über digitale Infrastruktur setzen voraus, dass Menschen sich überhaupt berechtigt fühlen, ein Gespräch darüber zu führen.",
@@ -200,8 +200,8 @@ export const projects: Project[] = [
     category: "articles",
     caption: "(08)",
     year: "2023",
-    title: { de: "Coming home after an exchange semester", en: "Coming home after an exchange semester" },
-    shortTitle: { de: "Coming Home", en: "Coming Home" },
+    title: { de: "Heimkommen nach einem Auslandssemester", en: "Coming home after an exchange semester" },
+    shortTitle: { de: "Heimkommen", en: "Coming Home" },
     subtitle: { de: "Comic", en: "Comic" },
     description: {
       de: "Wie fühlt es sich an, nach einem Auslandssemester nach Hause zu kommen? In ein leeres Zimmer, aber eine vertraute Wohnung. Zwischen Wärme und Kälte bewege ich mich in dieser Geschichte zwischen vertraut und fremd.\n\nEin Comic, entstanden im Kurs Mediated Anthropology.",
