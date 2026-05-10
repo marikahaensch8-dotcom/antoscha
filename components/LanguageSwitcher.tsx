@@ -5,16 +5,15 @@ type Props = { locale: Locale };
 
 export function LanguageSwitcher({ locale }: Props) {
   const target = locale === "de" ? "/en" : "/";
-  const self = locale.toUpperCase();
   const other = (locale === "de" ? "en" : "de").toUpperCase();
 
   return (
     <Link
       href={target}
-      className="font-helvetica group text-[16px] font-normal text-ink"
+      aria-label={`Switch to ${other}`}
+      className="font-helvetica text-[16px] font-normal text-ink transition-opacity hover:opacity-60"
     >
-      <span className="group-hover:hidden">{self}</span>
-      <span className="hidden group-hover:inline">{other}</span>
+      {other}
     </Link>
   );
 }
