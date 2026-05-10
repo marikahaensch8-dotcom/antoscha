@@ -42,6 +42,9 @@ yarn-error.log*
 # original source images (only renamed copies in public/ are used)
 /images/
 
+# original assets from sister (videos, hi-res masters) — only optimized copies in public/assets/ ship
+/Textdatei/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -7,7 +7,7 @@ export const ui = {
   de: {
     siteTitle: "Antoscha Haensch",
     tagline:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      "Als Kulturanthropologin und interdisziplinäre Künstlerin erforsche ich die Welt als neugierigen, zugleich komplexen und politischen Raum. Digitale Infrastrukturen, sich wandelnde Generationen, das Gefühl, an einen Ort zurückzukehren, der sich verändert hat. Mit Sitz in Leipzig bewegt sich meine Arbeit zwischen Wissenschaft und Kunst. Forschung, Film und Community-Arbeit sind für mich keine getrennten Bereiche, sondern Wege, denselben Fragen nachzugehen: Wie verstehen wir die Welt, in der wir leben, wie schaffen wir Wissen gemeinsam und wie bringen wir es in eine fundierte politische Praxis ein?\n\nIch glaube, dass Lernen im Dialog geschieht. Ob ich offene Kunsträume organisiere, Filme mache oder eine Abschlussarbeit schreibe — Wissen ist für mich kollektiv. Ich lerne durch verschiedene Perspektiven, Wissensformen und mit ausreichend Empathie, um zwischen ihnen zu navigieren.",
     cv: "Lebenslauf",
     thesis: "Bachelorarbeit",
     download: "↓ Herunterladen",
@@ -29,7 +29,7 @@ export const ui = {
   en: {
     siteTitle: "Antoscha Haensch",
     tagline:
-      "Antoscha Haensch is a film student based in Berlin. Her practice moves between audiovisual essays, documentary shorts, writing and collective exhibitions. She is interested in memory, family, urban space and the question of how infrastructures can be sensed — as landscape, sound, taste. (Placeholder text, to be replaced.)",
+      "As a cultural anthropologist and interdisciplinary artist I am drawn to explore the world as a curious, yet complex and political space. Digital infrastructures, shifting generations, the feeling of coming home to somewhere that has changed. Based in Leipzig, my work moves in the inbetween of academic and creative. Research, filmmaking and community-organizing are not separate, but a way for me to explore the same questions: How do we understand the world we live in, how do we build knowledge collectively and how do we apply it for informed policy-making?\n\nI believe that learning happens in dialogue. Whether I am organizing open art spaces, making films, or writing a thesis, I recognize the knowledge as collective. I learn through different perspectives, ways of knowing and a good amount of empathy to navigate them.",
     cv: "CV",
     thesis: "Bachelor thesis",
     download: "↓ Download",

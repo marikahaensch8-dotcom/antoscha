@@ -16,12 +16,14 @@ export function Hero({ locale }: HeroProps) {
         <LanguageSwitcher locale={locale} />
       </div>
 
-      <p
+      <div
         lang={locale}
-        className="font-helvetica mt-3 text-[16px] leading-[1.25] text-ink text-justify hyphens-auto"
+        className="font-helvetica mt-3 space-y-3 text-[16px] leading-[1.25] text-ink text-justify hyphens-auto"
       >
-        {t.tagline}
-      </p>
+        {t.tagline.split("\n\n").map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
 
       <div className="font-mono mt-6 flex flex-row items-center gap-5 text-[13px] font-bold uppercase tracking-wider">
         <a

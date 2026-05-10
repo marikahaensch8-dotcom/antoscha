@@ -35,6 +35,11 @@ export function ProjectMedia({ project, locale }: Props) {
       <Slider
         morphName={morphName}
         sources={media.sources.map((s) => ({ src: s.src, alt: s.alt[locale] }))}
+        download={
+          media.pdfDownload
+            ? { src: media.pdfDownload.src, label: media.pdfDownload.label[locale] }
+            : undefined
+        }
       />
     );
   }
@@ -83,9 +88,11 @@ export function ProjectMedia({ project, locale }: Props) {
 function Slider({
   sources,
   morphName,
+  download,
 }: {
   sources: { src: string; alt: string }[];
   morphName: string;
+  download?: { src: string; label: string };
 }) {
   const [i, setI] = useState(0);
   const total = sources.length;
@@ -128,6 +135,15 @@ function Slider({
             (NEXT)
           </button>
         </div>
+      )}
+      {download && (
+        <a
+          href={download.src}
+          download
+          className="font-mono text-[13px] font-bold uppercase tracking-wider text-ink transition-[letter-spacing] duration-200 ease-out hover:tracking-widest"
+        >
+          ↓ ({download.label})
+        </a>
       )}
     </div>
   );

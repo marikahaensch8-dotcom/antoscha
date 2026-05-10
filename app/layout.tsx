@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     template: "%s — Antoscha Haensch",
   },
   description:
-    "Antoscha Haensch — Filmstudentin in Berlin. Audiovisuelle Arbeiten, Texte und Community-Projekte.",
+    "Antoscha Haensch — Kulturanthropologin und interdisziplinäre Künstlerin in Leipzig. Audiovisuelle Arbeiten, Texte und Community-Projekte.",
   openGraph: {
     title: "Antoscha Haensch — Portfolio",
     description:
-      "Antoscha Haensch — Filmstudentin in Berlin. Audiovisuelle Arbeiten, Texte und Community-Projekte.",
+      "Antoscha Haensch — Kulturanthropologin und interdisziplinäre Künstlerin in Leipzig. Audiovisuelle Arbeiten, Texte und Community-Projekte.",
     type: "website",
     locale: "de_DE",
     alternateLocale: "en_US",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Antoscha Haensch — Portfolio",
     description:
-      "Antoscha Haensch — Filmstudentin in Berlin. Audiovisuelle Arbeiten, Texte und Community-Projekte.",
+      "Antoscha Haensch — Kulturanthropologin und interdisziplinäre Künstlerin in Leipzig. Audiovisuelle Arbeiten, Texte und Community-Projekte.",
   },
 };
 
